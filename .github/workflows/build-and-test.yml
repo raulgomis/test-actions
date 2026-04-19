@@ -32,7 +32,7 @@ jobs:
     - name: Prepare release
       run: |
         echo $my_var
-        semversioner
+        semversioner --version
         ls
 
     - name: Publish to TestPyPI
