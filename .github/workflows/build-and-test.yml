@@ -25,10 +25,13 @@ jobs:
       run: |
         export my_var=2
         echo $my_var
+        touch myfile.txt
+        ls
 
     - name: Prepare release
       run: |
         echo $my_var
+        ls
 
     - name: Publish to TestPyPI
       env:
@@ -36,3 +39,4 @@ jobs:
         TWINE_PASSWORD: ${{ secrets.TEST_PYPI_PASSWORD }}
       run: |
         echo $my_var
+        ls
