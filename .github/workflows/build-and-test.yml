@@ -23,16 +23,16 @@ jobs:
         python-version: '3.14'
     - name: Install dependencies
       run: |
-        variable=2
-        echo $variable
+        export my_var=2
+        echo $my_var
 
     - name: Prepare release
       run: |
-        echo $variable
+        echo $my_var
 
     - name: Publish to TestPyPI
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.TEST_PYPI_PASSWORD }}
       run: |
-        echo $variable
+        echo $my_var
