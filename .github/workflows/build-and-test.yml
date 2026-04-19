@@ -25,12 +25,14 @@ jobs:
       run: |
         export my_var=2
         echo $my_var
+        pip install semversioner
         touch myfile.txt
         ls
 
     - name: Prepare release
       run: |
         echo $my_var
+        semversioner
         ls
 
     - name: Publish to TestPyPI
